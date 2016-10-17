@@ -95,34 +95,22 @@ void forward(int i, int j) {
 	digitalWrite(ENB, HIGH);
 
 	while (1) {
-		digitalWrite(IN1, 0);
-		digitalWrite(IN2, 1);
-		digitalWrite(IN3, 0);
-		digitalWrite(IN4, 1);
+		writeNibble(0, 1, 0, 1);
 		delay(j);
 		i--;
 		if (i < 1) break;
 
-		digitalWrite(IN1, 1);
-		digitalWrite(IN2, 0);
-		digitalWrite(IN3, 0);
-		digitalWrite(IN4, 1);
+		writeNibble(1, 0, 0, 1);
 		delay(j);
 		i--;
 		if (i < 1) break;
 
-		digitalWrite(IN1, 1);
-		digitalWrite(IN2, 0);
-		digitalWrite(IN3, 1);
-		digitalWrite(IN4, 0);
+		writeNibble(1, 0, 1, 0);
 		delay(j);
 		i--;
 		if (i < 1) break;
 
-		digitalWrite(IN1, 0);
-		digitalWrite(IN2, 1);
-		digitalWrite(IN3, 1);
-		digitalWrite(IN4, 0);
+		writeNibble(0, 1, 1, 0);
 		delay(j);
 		i--;
 		if (i < 1) break;
